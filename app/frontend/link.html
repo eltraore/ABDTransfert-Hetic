@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet">
+  <link rel="icon" href="img/logo.png" type="image/x-icon">
+  <title>ABD Transfer - Lien de Partage</title>
+</head>
+<body>
+  <div class="wrapper">
+    <section class="connexion">
+      <img src="img/logo.png" alt="Logo ABD Transfer">
+      <h1>Lien de Partage</h1>
+      <div id="shareLink" class="file-link-display">Chargement du lien...</div>
+      <div class="button-group">
+        <a class="transfer-button" href="compte.html">Retour au compte</a>
+      </div>
+    </section>
+    
+    <section class="background_droite">
+      <img src="img/blue-sky-with-white-clouds-2023-11-27-04-49-52-utc.jpg" alt="Background">
+    </section>
+  </div>
+  
+  <script>
+    // Récupère le lien de partage depuis l'URL et l'affiche
+    const urlParams = new URLSearchParams(window.location.search);
+    const shareLink = urlParams.get('shareLink');
+
+    if (shareLink) {
+        document.getElementById('shareLink').innerHTML = `Lien de téléchargement : <a href="${shareLink}" target="_blank">${shareLink}</a>`;
+    } else {
+        document.getElementById('shareLink').textContent = "Aucun lien de partage disponible.";
+    }
+  </script>
+</body>
+</html>

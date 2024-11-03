@@ -1,0 +1,45 @@
+name: "tdHetic"
+
+services:
+
+
+  database:
+    image: mariadb:11
+    environment:
+     MYSQL_ROOT_PASSWORD: root
+     MYSQL_DATABASE: tdHeticDB
+    volumes:
+    - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+    - "3306:3306"
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+
+  
+  node:
+    image: node:23
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
+    environment:
+      - DB_HOST=database
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=tdHeticDB
+      - UPLOAD_DIR=/app/uploads
+    working_dir: /app
+    command: "npm start"
+    depends_on:
+      database:
+       condition: service_healthy
+
+  
+
+volumes:
+  mariadb_data:

@@ -1,0 +1,249 @@
+/* Mise en page générale */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.wrapper {   
+  margin: 0 auto;          
+  display: flex;           
+  flex-direction: row;
+  height: 100vh;            
+}
+
+/* CONNEXION */
+.connexion {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4EAE9;
+  padding: 20px;
+}
+
+
+.connexion img {
+  width: 300px;
+  margin-bottom: 100px;
+}
+
+.connexion h1 {
+  font-size: 2.5rem;
+  color: #000;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.file-link-display {
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 80%; 
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.file-link-display a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+
+/* FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #598DC7;
+}
+form input:focus {
+  outline: none;
+
+}
+
+form button {
+  max-width: 180px;
+  width: 100%;
+  padding: 10px;
+  background-color: #598DC7;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+form button:hover {
+  background-color: #74A2D4;
+}
+
+form a {
+  color: #000;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-bottom: 50px;
+}
+form a:hover{
+  color: #598DC7;
+}
+
+/* BACKGROUND DROITE*/
+.background_droite {
+  width: 50%;
+  overflow: hidden;
+}
+
+.background_droite img{
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+@media screen and (max-width:992px){
+  .background_droite{
+    display: none;
+  }
+  .connexion {
+    width: 100%;
+  }
+  form {
+    width: 80%;
+  }
+}
+
+
+
+
+/* Upload */
+.upload-section {
+  max-width: 85%;
+  margin-top: 20px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px; 
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 12px;
+  flex-grow: 1;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Styles pour les boutons */
+.action-button {
+  padding: 5px 10px; 
+  font-size: 0.9rem; 
+  margin-left: 10px;
+  color: #fff; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+.delete-button {
+  background-color: #dc3545; /* Couleur pour le bouton de suppression */
+}
+
+.delete-button:hover {
+  background-color: #c82333; /* Couleur au survol pour suppression */
+}
+
+.generate-button {
+  background-color: #28a745; /* Couleur pour le bouton de génération */
+}
+
+.generate-button:hover {
+  background-color: #218838; /* Couleur au survol pour génération */
+}
+
+
+
+.transfer-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #5A8DFF;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.transfer-button:hover {
+  background-color: #4a7dce;
+}
+.upload-header:hover{
+  cursor:pointer;
+}
+
+.button-group{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-top: 20px;
+}
+.button-group a{
+  min-width: 150px;
+  border-radius: 15px;
+  text-decoration: none;
+  text-align: center;
+}
+.account-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.account-section input{
+  min-width: 300px;
+
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #598DC7;
+}
+
+
+.upload-header img{
+  margin-bottom: 0px;
+  width: 20px;
+}
+.list_link{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#uploadForm {
+  width: 100%;
+}
